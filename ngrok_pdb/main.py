@@ -58,7 +58,7 @@ def server_thread_start(timeout):
     HOST, PORT = "localhost", 7952
     # open the ngrok tunnel
     subprocess.run([
-        'ngrok', 'authtoken', os.environ['NGROK_AUTH']
+        ngrok_executable(), 'authtoken', os.environ['NGROK_AUTH']
     ], check=True)
     ngrok_process = subprocess.Popen([
         ngrok_executable(), 'tcp', str(PORT), '--log=stdout',
