@@ -21,3 +21,5 @@ jobs:
     - name: Test
       run: |
         python test.py
+      env:
+        NGROK_AUTH: ${{ secrets.NGROK_AUTH }}
